@@ -4,7 +4,7 @@ import Icon from "@expo/vector-icons/Ionicons";
 import Home from "./components/home";
 import About from "./components/about";
 import Speaker from "./components/speaker";
-
+import Contact from "./components/contact";
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
@@ -118,6 +118,24 @@ const SpeakerStack = createStackNavigator({
     },
   },
 });
+const ContactStack = createStackNavigator({
+  Contact: {
+    screen: Contact,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Contact",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+      };
+    },
+  },
+});
 const AppDrawerNavigator = createDrawerNavigator({
   Home: {
     screen: HomeStack,
@@ -130,6 +148,9 @@ const AppDrawerNavigator = createDrawerNavigator({
   },
   Speaker: {
     screen: SpeakerStack,
+  },
+  Contact: {
+    screen: ContactStack,
   },
 });
 

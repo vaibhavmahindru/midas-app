@@ -122,7 +122,7 @@ class Home extends Component {
             </Text>
             <Button
               onPress={Detail}
-              style={styles.appButtonContainer}
+              style={{ color: "black" }}
               title="Our Partners"
             />
           </View>
