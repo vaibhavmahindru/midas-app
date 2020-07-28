@@ -39,21 +39,22 @@ class contact extends Component {
     return this.state.array.map((element) => {
       return (
         <View
-          style={{ margin: 10, flexDirection: "row", paddingBottom: 5 }}
+          style={{ margin: 5, flexDirection: "row", paddingBottom: 5 }}
           key={element.key}
         >
-          <Text>
+          <Text style={{ fontSize: 20, paddingLeft: 18 }}>
             {element.name}
             {"\n"}
-            {element.detail}
+            <Text style={{ color: "grey", fontSize: 15 }}>
+              {element.detail}
+            </Text>
           </Text>
-          <Text>
+          <Text style={{ marginLeft: 30 }}>
             <MaterialCommunityIcons
               name="gmail"
-              size={28}
+              size={30}
               color="black"
               onPress={() => Linking.openURL("mailto:{element.mail}")}
-              iconStyle={{ marginLLeft: 10 }}
             />
           </Text>
         </View>
@@ -80,9 +81,9 @@ class contact extends Component {
           <Text
             style={{
               fontSize: 25,
-              marginLeft: 6,
+              textAlign: "center",
               marginTop: 8,
-              marginBottom: 15,
+              marginBottom: 10,
               fontWeight: "bold",
               color: "black",
             }}
@@ -90,6 +91,57 @@ class contact extends Component {
             Conference Conveners
           </Text>
           <View>{this.list()}</View>
+          <View style={styles.lineStyle} />
+          <View>
+            <Text
+              style={{
+                fontSize: 25,
+                textAlign: "center",
+                marginBottom: 5,
+                fontWeight: "bold",
+                color: "black",
+              }}
+            >
+              Event Location
+            </Text>
+            <Text
+              style={{
+                color: "grey",
+                fontSize: 17,
+                margin: 10,
+                paddingHorizontal: 5,
+                fontWeight: "bold",
+              }}
+            >
+              University of Petroleum and Energy Studies,{"\n"}P.O BIDHOLI
+              VIA-PREM NAGAR,{"\n"}DEHRADUN-248007
+            </Text>
+          </View>
+          <View style={styles.lineStyle} />
+          <View>
+            <Text
+              style={{
+                fontSize: 25,
+                textAlign: "center",
+                marginBottom: 5,
+                fontWeight: "bold",
+                color: "black",
+              }}
+            >
+              Important Numbers
+            </Text>
+            <Text
+              style={{
+                color: "black",
+                fontSize: 17,
+                margin: 10,
+                paddingHorizontal: 5,
+                fontWeight: "bold",
+              }}
+            >
+              +91 9711938087{"\n"}+91 8902691510
+            </Text>
+          </View>
         </View>
       </ScrollView>
     );
@@ -103,6 +155,11 @@ const styles = StyleSheet.create({
 
     paddingVertical: 10,
     paddingHorizontal: 15,
+  },
+  lineStyle: {
+    borderWidth: 0.7,
+    borderColor: "black",
+    margin: 15,
   },
 });
 

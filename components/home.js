@@ -15,12 +15,6 @@ class Home extends Component {
         "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
     };
 
-    const Detail = (props) => (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Detail</Text>
-      </View>
-    );
-
     return (
       <ImageBackground
         source={image}
@@ -34,7 +28,7 @@ class Home extends Component {
           <View
             style={{
               paddingTop: 40,
-              paddingBottom: 80,
+              paddingBottom: 120,
               paddingHorizontal: 6,
             }}
           >
@@ -84,9 +78,10 @@ class Home extends Component {
                 fontSize: 23,
                 textAlign: "center",
                 fontWeight: "bold",
+                marginTop: 10,
               }}
             >
-              In ASSOCIATION with{"\n"}{" "}
+              In ASSOCIATION with{"\n"}
               <Text
                 style={{
                   color: "black",
@@ -113,18 +108,14 @@ class Home extends Component {
             <Text
               style={{
                 color: "#ffffff",
-                fontSize: 22,
+                fontSize: 24,
                 textAlign: "center",
                 fontWeight: "bold",
+                marginTop: 10,
               }}
             >
               University of Petroleum and Energy Studies, Dehradun{"\n"}
             </Text>
-            <Button
-              onPress={Detail}
-              style={{ color: "black" }}
-              title="Our Partners"
-            />
           </View>
         </ScrollView>
       </ImageBackground>

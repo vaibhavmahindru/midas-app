@@ -5,6 +5,7 @@ import Home from "./components/home";
 import About from "./components/about";
 import Speaker from "./components/speaker";
 import Contact from "./components/contact";
+import Partners from "./components/partners";
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
@@ -16,53 +17,24 @@ class App extends Component {
 }
 export default App;
 
-class Feed extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Button
-          title="Go To Detail Screen"
-          onPress={() => this.props.navigation.navigate("Detail")}
-        />
-      </View>
-    );
-  }
-}
-
-const Detail = (props) => (
-  <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-    <Text>Detail</Text>
-  </View>
-);
-
-const FeedStack = createStackNavigator(
-  {
-    Feed: {
-      screen: Feed,
-      navigationOptions: ({ navigation }) => {
-        return {
-          headerTitle: "Feed",
-          headerLeft: (
-            <Icon
-              style={{ paddingLeft: 10 }}
-              onPress={() => navigation.openDrawer()}
-              name="md-menu"
-              size={30}
-            />
-          ),
-        };
-      },
-    },
-    Detail: {
-      screen: Detail,
+const PartnerStack = createStackNavigator({
+  Partners: {
+    screen: Partners,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Partners",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+      };
     },
   },
-  {
-    defaultNavigationOptions: {
-      gesturesEnabled: false,
-    },
-  }
-);
+});
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -123,7 +95,7 @@ const ContactStack = createStackNavigator({
     screen: Contact,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: "Contact",
+        headerTitle: "Contact Us",
         headerLeft: (
           <Icon
             style={{ paddingLeft: 10 }}
@@ -143,10 +115,10 @@ const AppDrawerNavigator = createDrawerNavigator({
   About: {
     screen: AboutStack,
   },
-  Feed: {
-    screen: FeedStack,
+  Partners: {
+    screen: PartnerStack,
   },
-  Speaker: {
+  Speakers: {
     screen: SpeakerStack,
   },
   Contact: {
