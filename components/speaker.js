@@ -15,14 +15,14 @@ class speaker extends Component {
       array: [
         {
           key: 1,
-          url: "../assets/images/1",
+          url: "https://www.icmidas.in/img/speakers/ajay2.jpg",
           name: "Padmashri Ajay Ray",
           designation: "IIEST, Shibpur",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 2,
-          url: "../assets/images/1",
+          url: "https://www.icmidas.in/img/speakers/unnamed1.jpg",
           name: "Ahmed Elngar",
           designation: "Beni-Suef University,Egypt",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
@@ -92,7 +92,6 @@ class speaker extends Component {
   }
   list = () => {
     return this.state.array.map((element) => {
-      console.log(element.url);
       return (
         <View
           style={{ margin: 10, flexDirection: "row", paddingBottom: 5 }}

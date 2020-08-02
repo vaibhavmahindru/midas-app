@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  ImageBackground,
+  Image,
   ScrollView,
   Text,
   StyleSheet,
@@ -9,25 +9,18 @@ import {
 } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import * as Font from "expo-font";
-//import BarlowCondensed from "../assets/fonts/BarlowCondensed-Regular.ttf";
 class Home extends Component {
   render() {
     const image = {
       uri:
         "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
     };
-    /*const [loaded] = useFonts({
-      BarlowCondensed: require("../assets/fonts/BarlowCondensed-Regular.ttf"),
-    });
-
-    if (!loaded) {
-      return null;
-    }*/
 
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <Card
           title="MIDAS 2020"
+          titleStyle={{ fontSize: 25, fontWeight: "bold" }}
           image={{
             uri:
               "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
@@ -35,35 +28,37 @@ class Home extends Component {
         >
           <View
             style={{
-              backgroundColor: "#4845a1",
+              //backgroundColor: "#4845a1",
+              backgroundColor: "#525B56",
+              paddingVertical: 5,
+              paddingHorizontal: 2,
             }}
           >
             <Text
               style={{
-                color: "black",
+                color: "#F2EAED",
                 fontSize: 23.6,
                 textAlign: "center",
-                fontWeight: "bold",
+                marginBottom: 10,
               }}
             >
-              INTERNATIONAL CONFERENCE{"\n"}
+              INTERNATIONAL CONFERENCE
             </Text>
             <Text
               style={{
                 color: "black",
                 fontSize: 24,
                 textAlign: "center",
-                fontWeight: "bold",
+                marginBottom: 10,
               }}
             >
-              ON{"\n"}
+              ON
             </Text>
             <Text
               style={{
-                color: "black",
+                color: "#F2EAED",
                 fontSize: 22,
                 textAlign: "center",
-                fontWeight: "bold",
               }}
             >
               MACHINE INTELLIGENCE & DATA SCIENCE APPLICATIONS
@@ -80,20 +75,20 @@ class Home extends Component {
             </Text>
             <Text
               style={{
-                color: "black",
+                color: "#e3ca7f",
                 fontSize: 23,
                 textAlign: "center",
-                fontWeight: "bold",
+
                 marginTop: 10,
               }}
             >
               In ASSOCIATION with{"\n"}
               <Text
                 style={{
-                  color: "black",
+                  color: "#F2EAED",
                   fontSize: 27,
+
                   textAlign: "center",
-                  fontWeight: "bold",
                 }}
               >
                 "Next Generation Computing Technologies"
@@ -104,29 +99,29 @@ class Home extends Component {
             <Text
               style={{
                 color: "black",
-                fontSize: 34,
+                fontSize: 30,
+                fontWeight: "normal",
                 textAlign: "center",
-                fontWeight: "bold",
               }}
             >
-              September 4-5, 2020{"\n"}
+              September 4-5, 2020
             </Text>
-            <Text
-              style={{
-                color: "black",
-                fontSize: 24,
-                textAlign: "center",
-                fontWeight: "bold",
+
+            <Image
+              //source={{ uri: "https://sg.inflibnet.ac.in/retrieve/6021828" }}
+              source={{
+                uri:
+                  "https://indiaeducationdiary.in/wp-content/uploads/2017/11/UPES-New-Logo-696x203.png",
               }}
-            >
-              University of Petroleum and Energy Studies, Dehradun{"\n"}
-            </Text>
+              style={styles.image}
+            ></Image>
             <Text
               style={{
-                color: "black",
-                fontSize: 15,
-                textAlign: "center",
+                color: "#edf259",
+                fontSize: 18,
                 fontWeight: "bold",
+                textAlign: "center",
+                paddingTop: 0,
               }}
             >
               All accepted and presented papers will be published in the
@@ -140,7 +135,15 @@ class Home extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#0c0880",
+    //backgroundColor: "#0c0880",
+    backgroundColor: "#16235A",
+  },
+  image: {
+    width: 200,
+    height: 90,
+
+    marginLeft: 68,
+    resizeMode: "center",
   },
 });
 export default Home;
