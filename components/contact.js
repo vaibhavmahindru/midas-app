@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import GoogleStaticMap from "react-native-google-static-map";
 class contact extends Component {
   constructor(props) {
     super(props);
@@ -84,12 +85,38 @@ class contact extends Component {
               textAlign: "center",
               marginTop: 8,
               marginBottom: 10,
+              color: "black",
+              fontWeight: "bold",
+            }}
+          >
+            Enquiry Email
+          </Text>
+          <Text
+            style={{
+              color: "blue",
+              fontSize: 20,
+
+              textAlign: "center",
+            }}
+            onPress={() => Linking.openURL("mailto:icmidas2020@gmail.com")}
+          >
+            icmidas2020@gmail.com
+          </Text>
+
+          <View style={styles.lineStyle} />
+          <Text
+            style={{
+              fontSize: 25,
+              textAlign: "center",
+
+              marginBottom: 10,
               fontWeight: "bold",
               color: "black",
             }}
           >
             Conference Conveners
           </Text>
+
           <View>{this.list()}</View>
           <View style={styles.lineStyle} />
           <View>
@@ -104,6 +131,14 @@ class contact extends Component {
             >
               Event Location
             </Text>
+            <GoogleStaticMap
+              style={styles.map}
+              latitude={"30.415945"}
+              longitude={"77.966833"}
+              zoom={13}
+              size={{ width: 300, height: 300 }}
+              apiKey={"AIzaSyBTAvEkphg5vx1EJ5SVQQ-nXc2BB6owmV0"}
+            />
             <Text
               style={{
                 color: "grey",
@@ -157,7 +192,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   lineStyle: {
-    borderWidth: 0.7,
+    borderWidth: 0.5,
     borderColor: "black",
     margin: 15,
   },

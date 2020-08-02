@@ -7,54 +7,60 @@ import {
   Button,
   View,
 } from "react-native";
-
+import { Card, ListItem } from "react-native-elements";
+import * as Font from "expo-font";
+//import BarlowCondensed from "../assets/fonts/BarlowCondensed-Regular.ttf";
 class Home extends Component {
   render() {
     const image = {
       uri:
         "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
     };
+    /*const [loaded] = useFonts({
+      BarlowCondensed: require("../assets/fonts/BarlowCondensed-Regular.ttf"),
+    });
+
+    if (!loaded) {
+      return null;
+    }*/
 
     return (
-      <ImageBackground
-        source={image}
-        style={{
-          flex: 1,
-          resizeMode: "cover",
-          justifyContent: "center",
-        }}
-      >
-        <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Card
+          title="MIDAS 2020"
+          image={{
+            uri:
+              "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
+          }}
+        >
           <View
             style={{
-              paddingTop: 40,
-              paddingBottom: 120,
-              paddingHorizontal: 6,
+              backgroundColor: "#4845a1",
             }}
           >
             <Text
               style={{
                 color: "black",
-                fontSize: 26,
-
+                fontSize: 23.6,
+                textAlign: "center",
                 fontWeight: "bold",
               }}
             >
-              {"\n"}INTERNATIONAL CONFERENCE
+              INTERNATIONAL CONFERENCE{"\n"}
             </Text>
             <Text
               style={{
-                color: "#ffffff",
+                color: "black",
                 fontSize: 24,
                 textAlign: "center",
                 fontWeight: "bold",
               }}
             >
-              ON
+              ON{"\n"}
             </Text>
             <Text
               style={{
-                color: "#ffffff",
+                color: "black",
                 fontSize: 22,
                 textAlign: "center",
                 fontWeight: "bold",
@@ -74,7 +80,7 @@ class Home extends Component {
             </Text>
             <Text
               style={{
-                color: "#ffffff",
+                color: "black",
                 fontSize: 23,
                 textAlign: "center",
                 fontWeight: "bold",
@@ -107,27 +113,34 @@ class Home extends Component {
             </Text>
             <Text
               style={{
-                color: "#ffffff",
+                color: "black",
                 fontSize: 24,
                 textAlign: "center",
                 fontWeight: "bold",
-                marginTop: 10,
               }}
             >
               University of Petroleum and Energy Studies, Dehradun{"\n"}
             </Text>
+            <Text
+              style={{
+                color: "black",
+                fontSize: 15,
+                textAlign: "center",
+                fontWeight: "bold",
+              }}
+            >
+              All accepted and presented papers will be published in the
+              Springer's Algorithms for Intelligent Systems Series.
+            </Text>
           </View>
-        </ScrollView>
-      </ImageBackground>
+        </Card>
+      </ScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.29)",
+    backgroundColor: "#0c0880",
   },
 });
 export default Home;

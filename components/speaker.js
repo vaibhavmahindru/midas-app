@@ -7,7 +7,7 @@ import {
   Button,
   View,
 } from "react-native";
-
+import { Card, ListItem, Icon, Avatar } from "react-native-elements";
 class speaker extends Component {
   constructor(props) {
     super(props);
@@ -15,67 +15,84 @@ class speaker extends Component {
       array: [
         {
           key: 1,
-          url: "https://www.icmidas.in/img/speakers/ajay2.jpg",
+          url: "../assets/images/1",
           name: "Padmashri Ajay Ray",
           designation: "IIEST, Shibpur",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 2,
-          url: "https://www.icmidas.in/img/speakers/unnamed1.jpg",
+          url: "../assets/images/1",
           name: "Ahmed Elngar",
           designation: "Beni-Suef University,Egypt",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 3,
           url: "https://www.icmidas.in/img/speakers/gp4.jpg",
+
           name: "Dr. G.P. Li",
           designation:
             "Director, University of California,                              USA",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 4,
           url: "https://www.icmidas.in/img/speakers/ss4.jpg",
+
           name: "Simeon Simoff",
           designation:
             "Dean of Computing, Engineering,                      Australia",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 5,
           url: "https://www.icmidas.in/img/speakers/ssk.jpg",
+
           name: "Prof. Dr. Subarna Shakya",
           designation: "Institute of Engineering,Tribhuvan University,Nepal",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 6,
           url: "https://www.icmidas.in/img/speakers/ab.jpg",
+
           name: "Mr. Aninda Bose ",
           designation: "Senior Editor, Springer Nature",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 7,
           url: "https://www.icmidas.in/img/speakers/speaker7.png",
+
           name: "Dr. Martine Gadille",
           designation: "Aix Marseille University, France ",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 8,
           url: "https://www.icmidas.in/img/speakers/speaker8.png",
+
           name: "Professor Marwan Al-Akaidi ",
           designation:
             "Vice President for Research,                  American University, Dubai",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 9,
           url: "https://www.icmidas.in/img/speakers/speaker9.jpg",
+
           name: "Dr. Adheesh Budree",
           designation:
             "University of Cape Town,                           South Africa",
+          style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
       ],
     };
   }
   list = () => {
     return this.state.array.map((element) => {
+      console.log(element.url);
       return (
         <View
           style={{ margin: 10, flexDirection: "row", paddingBottom: 5 }}
@@ -106,6 +123,20 @@ class speaker extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.container}>
+        <View>
+          <Text
+            style={{
+              fontSize: 25,
+
+              fontWeight: "normal",
+              color: "black",
+              textAlign: "center",
+              paddingBottom: 10,
+            }}
+          >
+            Keynote Speakers
+          </Text>
+        </View>
         <View
           style={{
             backgroundColor: "white",
@@ -120,18 +151,6 @@ class speaker extends Component {
             elevation: 10,
           }}
         >
-          <Text
-            style={{
-              fontSize: 25,
-              marginLeft: 6,
-              marginTop: 8,
-              marginBottom: 15,
-              fontWeight: "normal",
-              color: "black",
-            }}
-          >
-            Keynote Speakers
-          </Text>
           <View>{this.list()}</View>
         </View>
       </ScrollView>
@@ -148,10 +167,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   image: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     resizeMode: "center",
-    borderRadius: 50,
+    borderRadius: 10,
+  },
+  lineStyle: {
+    borderWidth: 0.7,
+    borderColor: "black",
+    margin: 15,
+    opacity: 0.5,
   },
 });
 export default speaker;

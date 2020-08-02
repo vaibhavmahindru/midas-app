@@ -34,18 +34,19 @@ class Settings extends Component {
             Machine Intelligence and Data Science Applications (MIDAS) 2020" in
             association with NGCT Society on September 4-5, 2020.{"\n"}
             {"\n"}
-            MIDAS-2020 aims to provide a forum for researchers from both
-            academia and industry to share their latest research contributions
-            in the area of AI and Data Sciences and thus to exchange knowledge
-            with the common goal of shaping the future. The best way to create
-            memories is to gather and share the ideas, creativity and
-            innovations. {"\n"}
+            The goal of the conference is to bring to promote and provide a
+            platform for researchers, academia and practitioners to meet and
+            exchange ideas on recent theoretical and applied Machine
+            Intelligence and Data Sciences research. The theme for MIDAS 2020
+            is: Machine Intelligence and Data Analytics{"\n"}
             {"\n"}The conference program consists of wide range of sessions
-            including distinguished lectures, paper presentations and poster
-            presentations, along with prominent keynote speakers and industrial
-            workshops. The theme for the conference is apt to the present
-            scenario as currently world is driven by data and human interference
-            is being limited by using various AI technologies.
+            including distinguished lectures, paper presentations, poster
+            sessions and project demonstrations, along with prominent keynote
+            speakers and industrial workshops.{"\n"}
+            {"\n"}
+            The conference theme aims to reflect the need for research and
+            development in order to unleash the transformational potentials of
+            emerging technologies.
           </Text>
         </View>
       </ScrollView>
