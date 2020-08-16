@@ -19,30 +19,53 @@ class Home extends Component {
   }
   componentDidMount() {
     /*Firebase.database()
-      .ref("updates/")
+      .ref("updates")
       .set(["test1", "test2"])
       .then(() => {
         console.log("worked");
-      })
-      .catch((error) => {
+      });
+    .catch((error) => {
         console.log(error);
       });*/
+
     Firebase.database()
       .ref("updates")
-      .once("value", (data) => {
+      .on("value", (snapshot) => {
+        console.log(snapshot.val());
         this.setState({
-          list: data,
+          list: snapshot.val(),
         });
-        console.log("set", this.state.list);
-        //console.log(data);
       });
   }
+
+  /*data = () => {
+    this.state.list.map((element) => {
+      return <Text>{element.value}</Text>;
+    });
+  };*/
   render() {
+    console.log("see", this.state.list);
+    const updates = this.state.list.map((item) => {
+      return (
+        <Text
+          key={item.key}
+          style={{
+            color: "black",
+            fontSize: 18,
+            fontWeight: "bold",
+            textAlign: "center",
+            paddingTop: 0,
+          }}
+        >
+          {item.key}
+        </Text>
+      );
+    });
     const image = {
       uri:
         "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
     };
-    //console.log(Firebase);
+
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <Card
@@ -55,7 +78,6 @@ class Home extends Component {
         >
           <View
             style={{
-              //backgroundColor: "#4845a1",
               backgroundColor: "#525B56",
               paddingVertical: 5,
               paddingHorizontal: 2,
@@ -154,17 +176,8 @@ class Home extends Component {
               All accepted and presented papers will be published in the
               Springer's Algorithms for Intelligent Systems Series.
             </Text>
-            <Text
-              style={{
-                color: "#edf259",
-                fontSize: 18,
-                fontWeight: "bold",
-                textAlign: "center",
-                paddingTop: 0,
-              }}
-            >
-              {this.state.list}
-            </Text>
+
+            <View>{updates}</View>
           </View>
         </Card>
       </ScrollView>
