@@ -9,13 +9,40 @@ import {
 } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import * as Font from "expo-font";
+import Firebase from "../FirebaseConfig";
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [],
+    };
+  }
+  componentDidMount() {
+    /*Firebase.database()
+      .ref("updates/")
+      .set(["test1", "test2"])
+      .then(() => {
+        console.log("worked");
+      })
+      .catch((error) => {
+        console.log(error);
+      });*/
+    Firebase.database()
+      .ref("updates")
+      .once("value", (data) => {
+        this.setState({
+          list: data,
+        });
+        console.log("set", this.state.list);
+        //console.log(data);
+      });
+  }
   render() {
     const image = {
       uri:
         "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
     };
-
+    //console.log(Firebase);
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <Card
@@ -126,6 +153,17 @@ class Home extends Component {
             >
               All accepted and presented papers will be published in the
               Springer's Algorithms for Intelligent Systems Series.
+            </Text>
+            <Text
+              style={{
+                color: "#edf259",
+                fontSize: 18,
+                fontWeight: "bold",
+                textAlign: "center",
+                paddingTop: 0,
+              }}
+            >
+              {this.state.list}
             </Text>
           </View>
         </Card>

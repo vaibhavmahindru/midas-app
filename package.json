@@ -10,14 +10,18 @@
   "dependencies": {
     "@expo/vector-icons": "^10.2.0",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-firebase/app": "^8.3.0",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^5.7.1",
     "expo": "~38.0.8",
+    "expo-font": "~8.2.1",
     "expo-status-bar": "^1.0.2",
+    "firebase": "7.9.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-elements": "^2.1.0",
+    "react-native-firebase": "^5.6.0",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-google-static-map": "^0.1.13",
     "react-native-icons": "^0.7.1",
@@ -28,8 +32,7 @@
     "react-navigation": "^4.4.0",
     "react-navigation-drawer": "^2.5.0",
     "react-navigation-stack": "^2.8.2",
-    "react-navigation-tabs": "^2.5.5",
-    "expo-font": "~8.2.1"
+    "react-navigation-tabs": "^2.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
