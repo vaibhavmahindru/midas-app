@@ -136,7 +136,7 @@ class contact extends Component {
               latitude={"30.415945"}
               longitude={"77.966833"}
               zoom={13}
-              size={{ width: 300, height: 300 }}
+              size={{ width: 300, height: 350 }}
               apiKey={"AIzaSyBTAvEkphg5vx1EJ5SVQQ-nXc2BB6owmV0"}
             />
             <Text

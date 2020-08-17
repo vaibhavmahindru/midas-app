@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Button,
   View,
+  Linking,
 } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import * as Font from "expo-font";
@@ -57,6 +58,7 @@ class Home extends Component {
             textAlign: "center",
             paddingTop: 0,
           }}
+          onPress={() => Linking.openURL("https://google.com")}
         >
           {item}
         </Text>

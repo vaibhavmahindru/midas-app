@@ -6,6 +6,7 @@ import About from "./components/about";
 import Speaker from "./components/speaker";
 import Contact from "./components/contact";
 import Partners from "./components/partners";
+import Updates from "./components/updates";
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
@@ -108,6 +109,24 @@ const ContactStack = createStackNavigator({
     },
   },
 });
+const UpdatesStack = createStackNavigator({
+  Updates: {
+    screen: Updates,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Recent Updates",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+      };
+    },
+  },
+});
 const AppDrawerNavigator = createDrawerNavigator({
   Home: {
     screen: HomeStack,
@@ -123,6 +142,9 @@ const AppDrawerNavigator = createDrawerNavigator({
   },
   Contact: {
     screen: ContactStack,
+  },
+  Updates: {
+    screen: UpdatesStack,
   },
 });
 
