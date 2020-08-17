@@ -18,6 +18,7 @@ class Home extends Component {
     };
   }
   componentDidMount() {
+    //for pushing the data into firebase
     /*Firebase.database()
       .ref("updates")
       .set(["test1", "test2"])
@@ -28,36 +29,36 @@ class Home extends Component {
         console.log(error);
       });*/
 
+    //fetching the data
     Firebase.database()
       .ref("updates")
       .on("value", (snapshot) => {
-        console.log(snapshot.val());
+        let project = snapshot.val() ? snapshot.val() : [];
+        let i;
+        let data = [];
+        for (i in project) {
+          data = [...data, project[i]];
+        }
         this.setState({
-          list: snapshot.val(),
+          list: data,
         });
       });
   }
 
-  /*data = () => {
-    this.state.list.map((element) => {
-      return <Text>{element.value}</Text>;
-    });
-  };*/
   render() {
-    console.log("see", this.state.list);
     const updates = this.state.list.map((item) => {
       return (
         <Text
           key={item.key}
           style={{
-            color: "black",
-            fontSize: 18,
-            fontWeight: "bold",
+            color: "white",
+            fontSize: 18.5,
+            paddingHorizontal: 2,
             textAlign: "center",
             paddingTop: 0,
           }}
         >
-          {item.key}
+          {item}
         </Text>
       );
     });
@@ -174,7 +175,8 @@ class Home extends Component {
               }}
             >
               All accepted and presented papers will be published in the
-              Springer's Algorithms for Intelligent Systems Series.
+              Springer's Algorithms for Intelligent Systems Series.{"\n"}
+              {"\n"}
             </Text>
 
             <View>{updates}</View>
@@ -186,7 +188,6 @@ class Home extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: "#0c0880",
     backgroundColor: "#16235A",
   },
   image: {
