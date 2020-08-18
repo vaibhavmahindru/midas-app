@@ -131,6 +131,7 @@ class contact extends Component {
             >
               Event Location
             </Text>
+            {/*
             <GoogleStaticMap
               style={styles.map}
               latitude={"30.415945"}
@@ -138,7 +139,7 @@ class contact extends Component {
               zoom={13}
               size={{ width: 300, height: 350 }}
               apiKey={"AIzaSyBTAvEkphg5vx1EJ5SVQQ-nXc2BB6owmV0"}
-            />
+            />*/}
             <Text
               style={{
                 color: "grey",
