@@ -17,14 +17,16 @@ class speaker extends Component {
           key: 1,
           url: "https://www.icmidas.in/img/speakers/ajay2.jpg",
           name: "Padmashri Ajay Ray",
-          designation: "IIEST, Shibpur",
+          designation: "IIEST,",
+          place: "Shibpur",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
           key: 2,
           url: "https://www.icmidas.in/img/speakers/unnamed1.jpg",
           name: "Ahmed Elngar",
-          designation: "Beni-Suef University,Egypt",
+          designation: "Beni-Suef University,",
+          place: "Egypt",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -32,8 +34,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/gp4.jpg",
 
           name: "Dr. G.P. Li",
-          designation:
-            "Director, University of California,                              USA",
+          designation: "Director, University of California,",
+          place: "USA",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -41,8 +43,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/ss4.jpg",
 
           name: "Simeon Simoff",
-          designation:
-            "Dean of Computing, Engineering,                      Australia",
+          designation: "Dean of Computing, Engineering,",
+          place: "Australia",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -50,7 +52,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/ssk.jpg",
 
           name: "Prof. Dr. Subarna Shakya",
-          designation: "Institute of Engineering,Tribhuvan University,Nepal",
+          designation: "Institute of Engineering,",
+          place: "Tribhuvan University,Nepal",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -58,7 +61,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/ab.jpg",
 
           name: "Mr. Aninda Bose ",
-          designation: "Senior Editor, Springer Nature",
+          designation: "Senior Editor,",
+          place: "Springer Nature",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -66,7 +70,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/speaker7.png",
 
           name: "Dr. Martine Gadille",
-          designation: "Aix Marseille University, France ",
+          designation: "Aix Marseille University,",
+          place: "France",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -74,8 +79,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/speaker8.png",
 
           name: "Professor Marwan Al-Akaidi ",
-          designation:
-            "Vice President for Research,                  American University, Dubai",
+          designation: "Vice President for Research,",
+          place: "American University, Dubai",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
         {
@@ -83,8 +88,8 @@ class speaker extends Component {
           url: "https://www.icmidas.in/img/speakers/speaker9.jpg",
 
           name: "Dr. Adheesh Budree",
-          designation:
-            "University of Cape Town,                           South Africa",
+          designation: "University of Cape Town,",
+          place: "South Africa",
           style: "{{width: 50, height: 50, borderRadius: 50}}",
         },
       ],
@@ -113,6 +118,8 @@ class speaker extends Component {
             </Text>
             <Text numberOfLines={3} style={{ fontSize: 15 }}>
               {element.designation}
+              {"\n"}
+              {element.place}
             </Text>
           </View>
         </View>

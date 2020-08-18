@@ -58,7 +58,6 @@ class Home extends Component {
             textAlign: "center",
             paddingTop: 0,
           }}
-          onPress={() => Linking.openURL("https://google.com")}
         >
           {item}
         </Text>

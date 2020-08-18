@@ -55,7 +55,7 @@ class contact extends Component {
               name="gmail"
               size={30}
               color="black"
-              onPress={() => Linking.openURL("mailto:{element.mail}")}
+              onPress={() => Linking.openURL(`mailto:${element.mail}`)}
             />
           </Text>
         </View>
