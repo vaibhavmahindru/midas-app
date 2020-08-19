@@ -72,7 +72,7 @@ class Home extends Component {
       <ScrollView contentContainerStyle={styles.container}>
         <Card
           title="MIDAS 2020"
-          titleStyle={{ fontSize: 25, fontWeight: "bold" }}
+          titleStyle={{ fontSize: 28, fontWeight: "bold" }}
           image={{
             uri:
               "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
