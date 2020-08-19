@@ -8,6 +8,7 @@ import Contact from "./components/contact";
 import Partners from "./components/partners";
 import Updates from "./components/updates";
 import Schedule from "./components/schedule";
+import Zoom from "./components/zoom";
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
@@ -25,6 +26,24 @@ const PartnerStack = createStackNavigator({
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: "Partners",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+      };
+    },
+  },
+});
+const ZoomStack = createStackNavigator({
+  Zoom: {
+    screen: Zoom,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Zoom",
         headerLeft: (
           <Icon
             style={{ paddingLeft: 10 }}
@@ -96,7 +115,7 @@ const SpeakerStack = createStackNavigator({
     screen: Speaker,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: "Speaker",
+        headerTitle: "Speakers",
         headerLeft: (
           <Icon
             style={{ paddingLeft: 10 }}
@@ -163,6 +182,9 @@ const AppDrawerNavigator = createDrawerNavigator({
   },
   Updates: {
     screen: UpdatesStack,
+  },
+  Zoom: {
+    screen: ZoomStack,
   },
   Contact: {
     screen: ContactStack,

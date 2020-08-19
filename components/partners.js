@@ -138,6 +138,5 @@ const styles = StyleSheet.create({
     borderColor: "black",
     margin: 20,
   },
-  images: {},
 });
 export default partners;
