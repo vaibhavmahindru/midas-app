@@ -27,6 +27,8 @@ class Settings extends Component {
               fontSize: 20,
               fontWeight: "normal",
               paddingHorizontal: 12,
+              justifyContent: "center",
+              textAlign: "left",
             }}
           >
             School of Computer Science, University of Petroleum and Energy

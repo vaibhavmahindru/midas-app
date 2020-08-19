@@ -7,6 +7,7 @@ import Speaker from "./components/speaker";
 import Contact from "./components/contact";
 import Partners from "./components/partners";
 import Updates from "./components/updates";
+import Schedule from "./components/schedule";
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
@@ -36,7 +37,24 @@ const PartnerStack = createStackNavigator({
     },
   },
 });
-
+const ScheduleStack = createStackNavigator({
+  Schedule: {
+    screen: Schedule,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Schedule",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+      };
+    },
+  },
+});
 const HomeStack = createStackNavigator({
   Home: {
     screen: Home,
@@ -140,11 +158,14 @@ const AppDrawerNavigator = createDrawerNavigator({
   Speakers: {
     screen: SpeakerStack,
   },
-  Contact: {
-    screen: ContactStack,
+  Schedule: {
+    screen: ScheduleStack,
   },
   Updates: {
     screen: UpdatesStack,
+  },
+  Contact: {
+    screen: ContactStack,
   },
 });
 

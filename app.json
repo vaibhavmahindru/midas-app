@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "midas",
+    "name": "MIDAS",
     "slug": "midas",
     "version": "1.0.0",
     "orientation": "portrait",
 
     "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/newsplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

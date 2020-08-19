@@ -16,9 +16,6 @@ class partners extends Component {
     };
     return (
       <ScrollView>
-        <View>
-          <Image source={image} style={styles.image} />
-        </View>
         <Card title="ACADEMIC PARTNERS">
           <View>
             <Image
