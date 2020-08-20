@@ -16,7 +16,16 @@ class Home extends Component {
     super(props);
     this.state = {
       list: [],
+      index: 0,
+      pics: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQyPVTboAk-Ec2t1RZU7l_pRDj2twutFVmEug&usqp=CAU",
+        "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsspfoKCJ1pAw0PVsONaeyn_wEFuVLEPWZog&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4HetNHRiGqAL2w9kCjC-bEGppt2qWn1o1Og&usqp=CAU",
+      ],
     };
+    this.timoutId = null;
+    this.intervalId = null;
   }
   componentDidMount() {
     //for pushing the data into firebase
@@ -44,7 +53,27 @@ class Home extends Component {
           list: data,
         });
       });
+    //updating images
+    this.intervalId = setInterval(() => {
+      this.setState((prevState) => ({ index: prevState.index + 1 }));
+    }, 1000);
   }
+
+  /* nextImgHandler = () => {
+    clearInterval(this.intervalId)
+    this.setState(prevState => ({ index: prevState.index + 1 }))
+  }*/
+
+  ImgHandler = () => {
+    clearInterval(this.intervalId);
+    this.setState((prevState) => {
+      if (prevState.index === 3) {
+        return { index: 0 };
+      } else {
+        return { index: prevState.index + 1 };
+      }
+    });
+  };
 
   render() {
     const updates = this.state.list.map((item) => {
@@ -63,10 +92,6 @@ class Home extends Component {
         </Text>
       );
     });
-    const image = {
-      uri:
-        "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
-    };
 
     return (
       <ScrollView contentContainerStyle={styles.container}>
@@ -74,9 +99,9 @@ class Home extends Component {
           title="MIDAS 2020"
           titleStyle={{ fontSize: 28, fontWeight: "bold" }}
           image={{
-            uri:
-              "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
+            uri: this.state.pics[this.state.index],
           }}
+          onPress
         >
           <View
             style={{
