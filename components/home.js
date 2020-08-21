@@ -11,6 +11,7 @@ import {
 import { Card, ListItem } from "react-native-elements";
 import * as Font from "expo-font";
 import Firebase from "../FirebaseConfig";
+import { Transition } from "react-native-reanimated";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -18,27 +19,19 @@ class Home extends Component {
       list: [],
       index: 0,
       pics: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQyPVTboAk-Ec2t1RZU7l_pRDj2twutFVmEug&usqp=CAU",
         "https://www.upes.ac.in/media/1103/home-hero-1.jpg?anchor=center&mode=crop&width=1385&height=750&rnd=131999762900000000",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMAjZQSiBw1hsC4UQv0pMdgUn1COIJClRfPQ&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQyPVTboAk-Ec2t1RZU7l_pRDj2twutFVmEug&usqp=CAU",
+
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsspfoKCJ1pAw0PVsONaeyn_wEFuVLEPWZog&usqp=CAU",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4HetNHRiGqAL2w9kCjC-bEGppt2qWn1o1Og&usqp=CAU",
+        //"https://encrypted-tbn0.gstatic.com/images?q=tbn%1GV9Jm2u7rmsCe65wKzPTw5jtS38n2tVEGiQCeaFcCkA&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTp-rxy5gS99Dif8R4Y2P1leBtNtDl4qzdIOw&usqp=CAU",
       ],
     };
     this.timoutId = null;
     this.intervalId = null;
   }
   componentDidMount() {
-    //for pushing the data into firebase
-    /*Firebase.database()
-      .ref("updates")
-      .set(["test1", "test2"])
-      .then(() => {
-        console.log("worked");
-      });
-    .catch((error) => {
-        console.log(error);
-      });*/
-
     //fetching the data
     Firebase.database()
       .ref("updates")
@@ -55,14 +48,20 @@ class Home extends Component {
       });
     //updating images
     this.intervalId = setInterval(() => {
-      this.setState((prevState) => ({ index: prevState.index + 1 }));
-    }, 1000);
+      this.setState((prevState) => {
+        if (prevState.index === 4) {
+          return { index: 0 };
+        } else {
+          return { index: prevState.index + 1 };
+        }
+      });
+    }, 4000);
   }
 
   /* nextImgHandler = () => {
     clearInterval(this.intervalId)
     this.setState(prevState => ({ index: prevState.index + 1 }))
-  }*/
+  }
 
   ImgHandler = () => {
     clearInterval(this.intervalId);
@@ -74,7 +73,7 @@ class Home extends Component {
       }
     });
   };
-
+*/
   render() {
     const updates = this.state.list.map((item) => {
       return (
@@ -101,7 +100,6 @@ class Home extends Component {
           image={{
             uri: this.state.pics[this.state.index],
           }}
-          onPress
         >
           <View
             style={{
